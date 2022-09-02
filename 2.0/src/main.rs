@@ -5,4 +5,8 @@ fn main(){
     let v : f64 = s.parse().unwrap();
     println!("{}",v);
     println!("{}",v*2.0);
+
+    let mut s : String = v.to_string();
+    s = s.to_owned() + "srr";
+    println!("{}",s);
 }
