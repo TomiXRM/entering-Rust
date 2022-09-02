@@ -1,9 +1,9 @@
+//コンソール入力
 fn main(){
-    let a = [0,1,2,3];
-    println!("{:?}",a);
+    println!("名前を入力してください！");
+    let mut line = String::new();
+    std::io::stdin().read_line(&mut line).ok();
 
-
-    let mut s = String::new();
-    s.insert_str(0,"Hello");
-    println!("{}",s);
+    let name = line.trim().to_string();
+    println!("こんにちは{}さん",name);
 }
