@@ -1,12 +1,16 @@
 //キャスト変換?
 fn main(){
-    // 文字列から数値に変換する方法
-    let s = "123";
-    let v : f64 = s.parse().unwrap();
-    println!("{}",v);
-    println!("{}",v*2.0);
+    // let x : i32 = 456;
+    // let ref r = &x;
+    // println!("{} {} {:?}",x,r,*r);
 
-    let mut s : String = v.to_string();
-    s = s.to_owned() + "srr";
-    println!("{}",s);
+    let x : i32 = 456;
+    let ref r = x;
+    println!("{} is typeof {}",x,type_of(x));
+    println!("{} is typeof {}",r,type_of(r));
+    println!("{} is typeof {}",*r,type_of(*r));
+}
+
+fn type_of<T>(_:T) -> & 'static str{
+    std::any::type_name::<T>()
 }
