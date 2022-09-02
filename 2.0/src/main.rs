@@ -1,9 +1,9 @@
-//キャスト変換?
 fn main(){
-    println!("{:b}",123);  //2進数
-    println!("{:o}",123);  //9進数
-    println!("{:x}",123);  //16進数
-    println!("{:X}",123);  //16進数(大文字)
-    println!("{:e}",123);  //1.23e1
-    println!("{:E}",123);  //1.23E1
+    let a = [0,1,2,3];
+    println!("{:?}",a);
+
+
+    let mut s = String::new();
+    s.insert_str(0,"Hello");
+    println!("{}",s);
 }
