@@ -1,14 +1,15 @@
 use std::io;
 fn main() {
+    println!("enter a number");
     let mut s: String = String::new();
-    println!("名前を入力してください");
     let rslt = io::stdin().read_line(&mut s);
     match rslt {
         Ok(_v) => {}
-        Err(_e) => {
-            println!("Error");
+        Err(e) => {
+            println!("{}", e,);
         }
     }
-    let r: String = s.parse().unwrap();
-    println!("{}さんこんにちは！", r);
+
+    let num: i16 = s.trim().parse().unwrap();//trim()がないと改行で死ぬっぽ
+    println!("{} * 2 = {}", num, num * 2);
 }
