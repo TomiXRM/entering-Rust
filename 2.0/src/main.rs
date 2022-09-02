@@ -10,7 +10,7 @@ fn main(){
 
 
     //文字スライスの長さはlen()を使って取得できるらしい
-    println!("len{}",msg.len());
+    println!("len={}",msg.len());
     
 
 
