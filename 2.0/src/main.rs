@@ -1,25 +1,18 @@
-//static 変数
-// Staticな変数はどこからでも参照することができる変数らしい。
-// ただし大文字で宣言することtと、型を明示する必要がある。
-static mut VAL : i32 = 123;
-
-// staticは便利なように思えますが、重大なバグの原因になる可能性を持っているので
-// unsafeで囲むことにしている。
+//キャスト変換?
 fn main(){
-    unsafe{
-        println!("VAL={}",VAL);
-    }
+    let n : i32 = 32;
+    let f : f32 = n as f32;
 
-    twice();
+    println!("integer to float{}→{}",n , f);
 
-    unsafe{
-        println!("VAL={}",VAL);
-    }
-}
+    let v = 123.45;
+    let n = v as i32;
 
-fn twice(){
-    unsafe{
-        VAL = VAL * 2;
-        println!("VAL in twice() = {}",VAL);
-    }
+    println!("float to integer{}→{}",v , n);
+
+    //floatの丸め込みに使えるメソッドに
+    // - floor()
+    // - ceil()
+    // - round()
+    // がある
 }
