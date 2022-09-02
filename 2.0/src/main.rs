@@ -3,8 +3,10 @@ fn main(){
     let y : f64 = 0.3;
     println!("x*y={}",x as f64 *y);//型が異なるのでエラーだがas f64ってすればいけるらしい
     //no implementation for f32 * f64
-}
 
-fn type_of<T>(_:T) -> &'static str{
-    std::any::type_name::<T>()
+
+    let c:char = 'c';
+    let b = b'c';//b'なんとか'をすると「なんとか」の文字が整数に直される(ASCII)
+
+    println!("{} is {} in integer",c,b);
 }
