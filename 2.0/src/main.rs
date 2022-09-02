@@ -1,18 +1,8 @@
 //キャスト変換?
 fn main(){
-    let n : i32 = 32;
-    let f : f32 = n as f32;
-
-    println!("integer to float{}→{}",n , f);
-
-    let v = 123.45;
-    let n = v as i32;
-
-    println!("float to integer{}→{}",v , n);
-
-    //floatの丸め込みに使えるメソッドに
-    // - floor()
-    // - ceil()
-    // - round()
-    // がある
+    // 文字列から数値に変換する方法
+    let s = "123";
+    let v : f64 = s.parse().unwrap();
+    println!("{}",v);
+    println!("{}",v*2.0);
 }
