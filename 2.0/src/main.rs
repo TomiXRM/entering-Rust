@@ -1,7 +1,7 @@
 fn main(){
     let x : f32 = 7.0;
     let y : f64 = 0.3;
-    println!("x*y={}",x*y);//型が異なるのでエラー
+    println!("x*y={}",x as f64 *y);//型が異なるのでエラーだがas f64ってすればいけるらしい
     //no implementation for f32 * f64
 }
 
