@@ -1,9 +1,11 @@
 // use std::io;
 fn main() {
-    for i in 0..10 {
-        if i > 5 {
-            break;
+    'looptop: for i in 0..4 {
+        for j in 0..4 {
+            if i == 2 && j == 2 {
+                break 'looptop;
+            }
+            println!("{}{}", i, j);
         }
-        println!("{}", i);
     }
 }
