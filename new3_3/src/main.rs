@@ -1,10 +1,9 @@
 // use std::io;
 fn main() {
     for i in 0..10 {
-        let mut v = 1;
-        for j in 2..=i {
-            v = v * j;
+        if i > 5 {
+            break;
         }
-        println!("{}の階乗は{}", i, v);
+        println!("{}", i);
     }
 }
