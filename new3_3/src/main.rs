@@ -1,19 +1,10 @@
-use std::io;
+// use std::io;
 fn main() {
-    println!("type number");
-    let mut s: String = String::new();
-    let r = io::stdin().read_line(&mut s);
-    match r {
-        Ok(_) => {}
-        Err(_) => {
-            println!("type again");
-            return;
+    for i in 0..10 {
+        let mut v = 1;
+        for j in 2..=i {
+            v = v * j;
         }
-    }
-    let n: i32 = s.trim().parse().unwrap();
-    let b: bool = (n % 2) == 0;
-    match b {
-        true => println!("奇数です"),
-        false => println!("偶数です"),
+        println!("{}の階乗は{}", i, v);
     }
 }
