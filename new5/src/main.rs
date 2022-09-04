@@ -1,13 +1,28 @@
-union MyData {
-    va: u16,
-    vb: u32,
+enum DogKind {
+    AKITAINU,
+    SHIBAINU,
+    RETIEVER,
 }
+
 fn main() {
-    let v = MyData { vb: 0 };
-    unsafe {
-        //unionはC言語で使われるデータ構造で、メモリの侵害などのリスクから危険なコードを書きやすい
-        //危険なのでunsafeで領域を絞って書く
-        println!("v.va={}", v.va);
-        println!("v.vb={}", v.vb);
+    let mut dog = DogKind::AKITAINU;
+    match dog {
+        DogKind::AKITAINU => println!("これは秋田犬"),
+        DogKind::SHIBAINU => println!("これはしば犬"),
+        DogKind::RETIEVER => println!("これはレトリーバ"),
+    }
+
+    dog = DogKind::SHIBAINU;
+    match dog {
+        DogKind::AKITAINU => println!("これは秋田犬"),
+        DogKind::SHIBAINU => println!("これはしば犬"),
+        DogKind::RETIEVER => println!("これはレトリーバ"),
+    }
+
+    dog = DogKind::RETIEVER;
+    match dog {
+        DogKind::AKITAINU => println!("これは秋田犬"),
+        DogKind::SHIBAINU => println!("これはしば犬"),
+        DogKind::RETIEVER => println!("これはレトリーバ"),
     }
 }
